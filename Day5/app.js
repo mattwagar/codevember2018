@@ -1,6 +1,37 @@
 var gl;
 
-var model;
+  /*========================= CAPTURE MOUSE EVENTS ========================= */
+
+//   var AMORTIZATION=0.95;
+//   var drag=false;
+//   var old_x, old_y;
+//   var dX=0, dY=0;
+
+//   var mouseDown=function(e) {
+//     drag=true;
+//     old_x=e.pageX, old_y=e.pageY;
+//     e.preventDefault();
+//     return false;
+//   };
+
+//   var mouseUp=function(e){
+//     drag=false;
+//   };
+
+//   var mouseMove=function(e) {
+//     if (!drag) return false;
+//     dX=(e.pageX-old_x)*Math.PI/CANVAS.width,
+//       dY=(e.pageY-old_y)*Math.PI/CANVAS.height;
+//     THETA+=dX;
+//     PHI+=dY;
+//     old_x=e.pageX, old_y=e.pageY;
+//     e.preventDefault();
+//   };
+
+//   CANVAS.addEventListener("mousedown", mouseDown, false);
+//   CANVAS.addEventListener("mouseup", mouseUp, false);
+//   CANVAS.addEventListener("mouseout", mouseUp, false);
+//   CANVAS.addEventListener("mousemove", mouseMove, false);
 
 var InitDemo = function () {
     loadTextResource('shader.vs.glsl', function (vsErr, vsText) {
@@ -37,8 +68,6 @@ var InitDemo = function () {
 var RunDemo = function (vertexShaderText, fragmentShaderText, image, model3d) {
     console.log("This is working");
 
-    model = model3d;
-    console.log(model);
     var canvas = document.getElementById('my-canvas');
     var gl = canvas.getContext('webgl');
 
